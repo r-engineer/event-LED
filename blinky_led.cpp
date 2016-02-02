@@ -4,7 +4,6 @@
 blinky_led::blinky_led(uint8_t io, uint16_t on_off_time, uint8_t on_val )
 : polled_event(on_off_time)
 {
-	bl_on_off_default = on_off_time;
 	
 	bl_gpio = io;
 	bl_on_value = on_val;
@@ -34,12 +33,6 @@ void blinky_led::set_led_state(uint8_t state)
 		digitalWrite(bl_gpio, bl_off_value);
 		bl_led_state = LED_OFF;
 	}
-}
-
-void blinky_led::set_on_off_time()
-{
-	//base class
-	set_counter(bl_on_off_default);
 }
 
 void blinky_led::set_on_off_time(uint16_t on_off_time)
