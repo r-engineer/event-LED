@@ -16,12 +16,12 @@ public:
 	virtual void execute();
 	void set_on_off_time(uint16_t on_off_time);
 	uint16_t get_on_off_time() {return count_start;}
+	void set_led_state(uint8_t state);
 private:
 	uint8_t bl_gpio;
 	uint8_t bl_on_value;
 	uint8_t bl_off_value;
 	uint8_t bl_led_state;
-	void set_led_state(uint8_t state);
 };	
 	
 #endif
